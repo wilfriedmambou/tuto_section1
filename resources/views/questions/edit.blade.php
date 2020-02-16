@@ -2,22 +2,23 @@
 @section('content')
 <div class="container col-md-6">
 
-<form action="{{route('questions.update',$question->id)}}"method="POST">
-  @method('PUT')
+    <form action="{{route('questions.update',$question->id)}}" method="POST">
+        @method('PUT')
         {{csrf_field()}}
         <h4>Modifier votre question : {{$question->title}}</h4>
-        <hr/>
+        <hr />
         <div class="form-group">
-        <textarea name="title" id="title" rows="4" class="form-control  @error('title') is-invalid @enderror" value="{{$question->content}}" placeholder="{{$question->title}}"required>
+            <textarea name="title" id="title" rows="4" class="form-control  @error('title') is-invalid @enderror"
+                value="{{$question->content}}" placeholder="{{$question->title}}" required>
         {{ old('title') }}
         </textarea>
-        @error('title')
+            @error('title')
             <div class="invalid-feedback">{{$message}}</div>
-        @enderror
+            @enderror
         </div>
 
-        <input type="hidden" value="{{$question->id}}"name="question_id"/>
+        <input type="hidden" value="{{$question->id}}" name="question_id" />
         <button class="btn btn-primary">Soumettre la reponse</button>
     </form>
-    </div>
+</div>
 @endsection

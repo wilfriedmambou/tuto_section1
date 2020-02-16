@@ -22,7 +22,6 @@ class QuestionController extends Controller
         $questions=Question::orderBy('id','desc')->paginate(5);
         return view('questions.index')->with('questions',$questions);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +31,6 @@ class QuestionController extends Controller
     {
         return view('questions.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -57,7 +55,6 @@ class QuestionController extends Controller
             return redirect()->route('questions.create');
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -69,7 +66,6 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         return view('questions.show')->with('question',$question);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -84,8 +80,6 @@ class QuestionController extends Controller
         }else {
             return view('questions.edit',compact('question'));
         }
-      
-        
     }
 
     /**
@@ -107,8 +101,6 @@ class QuestionController extends Controller
         $question->title=$request->title;
         $question->save();
         return redirect()->route('questions.index');
-
-     
     }
 
     /**

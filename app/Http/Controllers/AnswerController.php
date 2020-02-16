@@ -22,8 +22,6 @@ class AnswerController extends Controller
      *
      * @return \Illuminate\Http\Response
 
-
-    
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -44,9 +42,7 @@ class AnswerController extends Controller
         $question->user->notify(new NewAnswerSubmitted($answer,$question,Auth::user()->name));
 
             return redirect()->route('questions.show',$question->id);
-    
     }
-
     /**
      * Display the specified resource.
      *
@@ -56,9 +52,7 @@ class AnswerController extends Controller
     public function show($id)
     {
         //
-        
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,7 +63,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -81,7 +74,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
